@@ -57,9 +57,8 @@ public class ListTest
         final int numberOfChild = 4;
         assertEquals( numberOfChild, firstLevelBlocks.length );
 
-        for ( int i = 0; i < firstLevelBlocks.length; i++ )
+        for ( Block block : firstLevelBlocks )
         {
-            Block block = firstLevelBlocks[i];
             assertEquals( ListItemBlock.class, block.getClass() );
         }
 

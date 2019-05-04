@@ -48,24 +48,22 @@ class FlexmarkDoxiaNodeRenderer implements NodeRenderer
     {
         //noinspection unchecked
         return new HashSet<NodeRenderingHandler<?>>( Arrays.asList(
-                new NodeRenderingHandler<IndentedCodeBlock>( IndentedCodeBlock.class,
-                        new CustomNodeRenderer<IndentedCodeBlock>()
-                        {
-                            @Override
-                            public void render( IndentedCodeBlock node, NodeRendererContext context, HtmlWriter html )
-                            {
-                                FlexmarkDoxiaNodeRenderer.this.render( node, context, html );
-                            }
-                        } ),
-                new NodeRenderingHandler<FencedCodeBlock>( FencedCodeBlock.class,
-                        new CustomNodeRenderer<FencedCodeBlock>()
-                        {
-                            @Override
-                            public void render( FencedCodeBlock node, NodeRendererContext context, HtmlWriter html )
-                            {
-                                FlexmarkDoxiaNodeRenderer.this.render( node, context, html );
-                            }
-                        } )
+                new NodeRenderingHandler<>( IndentedCodeBlock.class, new CustomNodeRenderer<IndentedCodeBlock>()
+                {
+                    @Override
+                    public void render( IndentedCodeBlock node, NodeRendererContext context, HtmlWriter html )
+                    {
+                        FlexmarkDoxiaNodeRenderer.this.render( node, context, html );
+                    }
+                } ),
+                new NodeRenderingHandler<>( FencedCodeBlock.class, new CustomNodeRenderer<FencedCodeBlock>()
+                {
+                    @Override
+                    public void render( FencedCodeBlock node, NodeRendererContext context, HtmlWriter html )
+                    {
+                        FlexmarkDoxiaNodeRenderer.this.render( node, context, html );
+                    }
+                } )
         ) );
     }
 
